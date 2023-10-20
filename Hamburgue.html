@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade</title>
+</head>
+<body>
+
+    <h1>Lanches</h1>
+
+    <h3>
+    Hamburgue: <span id="hamburgue"></span>
+    <P>
+    Acompanhamento: <span id ="aconpanhamento"></span>
+    <P>
+    Bebida: <span id="Bebida"></span>
+    <P>
+    Total: <span id="total"></span>
+    </h3>
+
+    <script>
+        const hamburgue = {X1: 1.36, X2: 2.31, X3: 2.81, X4: 3.21}
+        const acom = {Nuggets: 3.61, Fritas: 1.58}
+        const bebida = {cocacola: 1.48, fanta: 2.58, agua: 0.98}
+
+
+        let pedido1 = Number(prompt("Escolha um Hamburgue:\n X1 = 1.36 \n X2 = 2.31 \n X3 = 2.81\n X4 = 3.21\n utilize a numeração de 1 a 4 para escolher seu pedido"))
+        let pedido2 = Number(prompt("Escolha um acompanhamento:\n Nuggets = 3.61\n Fritas = 1.58\n utilize a numeração de 1 a 2 para escolher seu pedido"))
+        let pedido3 = Number(prompt("Escolha uma bebida:\n CocaCola = 1.48\n Fanta = 2.58\n Água = 0.98\n utilize a numeração de 1 a 3 para escolher seu pedido"))
+        let valor1;
+        let valor2;
+        let valor3;
+        let total;
+        while (pedido1 < 1 || pedido1 > 4) {
+            alert("Escolha de hamburguer inválida, escolha novamente");
+            pedido1 = Number(prompt("Escolha um Hamburgue:\n X1 = 1.36 \n X2 = 2.31 \n X3 = 2.81\n X4 = 3.21\n utilize a numeração de 1 a 4 para escolher seu pedido"))        
+}
+    switch (pedido1) {
+            case 1:
+                pedido1 = "X1 = " + hamburgue["X1"];
+                valor1 = hamburgue["X1"]
+                break;
+            case 2:
+                pedido1 = "X2 = " + hamburgue["X2"];
+                valor1 = hamburgue["X2"]
+                break;
+            case 3:
+                pedido1 = "X3 = " + hamburgue["X3"];
+                valor1 = hamburgue["X3"]
+                break;
+            case 4:
+                pedido1 = "X4 = " + hamburgue["X4"];
+                valor1 = hamburgue["X4"]
+                break;
+            default:
+                pedido1 = "valor digitado invalido"
+                break;
+        }
+
+    while(pedido2 < 1 || pedido2 > 2) {
+        alert("Escolha de acompanhamento inválida, escolha novamente");
+        pedido2 = Number(prompt("Escolha um acompanhamento:\n Nuggets = 3.61\n Fritas = 1.58\n utilize a numeração de 1 a 2 para escolher seu pedido"))
+}
+switch (pedido2) {
+            case 1:
+                pedido2 = "Nuggets = " + acom["Nuggets"];
+                valor2 = acom["Nuggets"]
+                break;
+            case 2:
+                pedido2 = "Fritas = " + acom["Fritas"];
+                valor2 = acom["Fritas"]
+                break;
+            default:
+                pedido2 = "valor digitado invalido"
+                break;
+    }   
+
+    while (pedido3 < 1 || pedido3 > 3) {
+        alert("Escolha de bebida inválida, escolha novamente");
+        pedido3 = Number(prompt("Escolha uma bebida:\n CocaCola = 1.48\n Fanta = 2.58\n Água = 0.98\n utilize a numeração de 1 a 3 para escolher seu pedido"))
+}
+switch (pedido3) {
+            case 1:
+                pedido3 = "Coca-Cola = " + bebida["cocacola"];
+                valor3 = bebida["cocacola"]
+                break;
+            case 2:
+                pedido3 = "Fanta =" + bebida["fanta"];
+                valor3 = bebida["fanta"]
+                break;
+            case 3:
+                pedido3 = "Água = " + bebida["agua"];
+                valor3 = bebida["agua"]
+                break;
+            default:
+                pedido3 = "valor digitado invalido"
+                break;
+    }   
+        
+        total = valor1 + valor2 + valor3
+
+        document.getElementById("hamburgue").innerHTML = pedido1;
+        document.getElementById("aconpanhamento").innerHTML = pedido2;
+        document.getElementById("Bebida").innerHTML = pedido3;
+        document.getElementById("total").innerHTML = "R$" + total.toFixed(2)
+    </script>
+</body>
+</html>
